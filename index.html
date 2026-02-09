@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/768px-Google_%22G%22_logo.svg.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusAI - The AI Agent Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: ['class', '.sharp'],
+        theme: {
+          extend: {
+            colors: {
+              'theme-bg': 'var(--bg-primary)',
+              'theme-bg-sec': 'var(--bg-secondary)',
+              'theme-card': 'var(--card-bg)',
+              'theme-border': 'var(--border)',
+              'theme-text': 'var(--text-primary)',
+              'theme-text-sec': 'var(--text-secondary)',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.4s ease-out forwards',
+              'slide-up': 'slideUp 0.3s ease-out forwards',
+              'slide-in-right': 'slideInRight 0.3s ease-out forwards',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'scale-in': 'scaleIn 0.2s ease-out forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              slideInRight: {
+                '0%': { opacity: '0', transform: 'translateX(10px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
+              scaleIn: {
+                '0%': { transform: 'scale(0.95)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* DEFAULT = PROFESSIONAL (Light) */
+      body.professional {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8fafc; /* slate-50 */
+        --card-bg: #ffffff;
+        --border: #e2e8f0; /* slate-200 */
+        --text-primary: #0f172a; /* slate-900 */
+        --text-secondary: #64748b; /* slate-500 */
+        --hover-overlay: rgba(0,0,0,0.02);
+      }
+
+      /* DARK MODE = SHARP */
+      body.sharp {
+        --bg-primary: #0f1115;
+        --bg-secondary: #161a21;
+        --card-bg: #1b2028;
+        --border: #2a2f38;
+        --text-primary: #e6e9ef;
+        --text-secondary: #94a3b8;
+        --hover-overlay: rgba(255,255,255,0.05);
+      }
+
+      /* Custom scrollbar for a cleaner feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg-secondary); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8; 
+      }
+      
+      body.sharp ::-webkit-scrollbar-thumb {
+        background: #334155;
+      }
+      body.sharp ::-webkit-scrollbar-thumb:hover {
+        background: #475569;
+      }
+
+      /* Utilities */
+      .glass-panel {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
